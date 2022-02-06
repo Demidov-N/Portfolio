@@ -1,0 +1,172 @@
+<!-- This file purpose is primary just to be a template for all the other pages created -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Final Group Project</title>
+
+    <!-- Importing the stylesheets required by template -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+    <!-- Main CSS from the template -->
+    <link rel="stylesheet" href="css/templatemo-digital-trend.css">
+
+</head>
+<style>
+    .box {
+        position: absolute;
+        text-align: center;
+        background: #FFFFFF;
+        color: #313639;
+        pointer-events: none;
+        font-size: 0.7rem;
+        border: solid;
+        border-width: 2px;
+    }
+
+    .title {
+        font-size: 30px;
+        font-weight: bold;
+        text-anchor: middle;
+        margin-left: 80px;
+        margin-right: 80px
+    }
+
+    .axis {
+        font-size: 15px;
+        text-anchor: middle;
+    }
+
+    .caption {
+        font-size: 15px;
+        text-anchor: middle;
+        position: relative;
+        margin-left: 80px;
+        margin-right: 80px;
+    }
+</style>
+
+<body>
+
+    <!-- Navbar of the project -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                Group B4 Final Project
+            </a>
+
+            <!-- Collapse Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Items -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+
+                    <!-- Project Information -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Project Information
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <!-- Motivation page -->
+                            <li><a class="dropdown-item" href="motivation.html">Motivation</a></li>
+                            <!-- Task analysis page -->
+                            <li><a class="dropdown-item" href="task-analysis.html">Task Analysis</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Data
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <!-- Data Overview page -->
+                            <li><a class="dropdown-item" href="data-overview.html">Data Overview</a></li>
+                            <!-- Data analysis page -->
+                            <li><a class="dropdown-item" href="data-analysis.html">Data Analysis</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <!-- Design process page -->
+                        <a href="designing.html" class="nav-link">Design Process</a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- Final visualization page -->
+                        <a href="visualisation.html" class="nav-link">Final Visualization</a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- Conclusion page -->
+                        <a href="conclusion.html" class="nav-link">Conclusion</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="col-lg-12 col-12 py-5 mt-5 mb-3 text-center" data-aos="fade-up">
+            <h1 class="mb-4">Final Visualization</h1>
+            <div id="stackedline"></div>
+            <div class="caption">The distance between a point and the point below it on this stacked area chart
+                represents the number of recommendations given in that category in that year. For example, in 2016 there
+                were 20 students recommended to take Pre-Calculus, you get this by subtracting the top point of the
+                yellow shape represeneting Pre-Calculus from the bottom point. On the other hand, the total number of
+                students in the program for each year is reprsented by the topmost point on each graph.
+                <br><br>
+                Click and drag to select years with a brush, click outside of the brushed area to reset. This limits the
+                years for the other two charts. When the strip plot is brushed, the stacked area chart shows only that
+                data. You can select increasingly fine areas by brushing them one after the other; to reset to the
+                original area, click outside of the brushed area on both.
+            </div>
+            <div id="strip"></div>
+            <div class="caption">This strip plot shows the number of students who had a given level of attendance and
+                received the same recommendation. The position on the y-axis indicates the attendance level of those
+                students, the position on the x-axis indicates the recommendation they received, and the size of each
+                circle represents the number of students with the same attendance and recommendation. The colors encode
+                the same values as the x-axis; they were added to pair with the stacked area chart, which the strip plot
+                is linked to.
+                <br><br>
+                Click and drag to select circles with a brush, click outside of the brushed area to reset the data. The
+                data within the area of the brush is the data shown on the other two charts. Selecting years in the
+                stacked area chart will show data in the strip plot for only those years, a change noted by the strip
+                plot's title.
+            </div>
+            <div id="lineview">
+                <div id="linechart" style="width:100%"></div>
+                <div class="caption">This line chart represents the average attendance rate of schools. The black dotted
+                    line represents the overall average of all schools combined. Schools represented with circles are
+                    schools that participated in BtC for just a year. Click on the color legend on the right to
+                    include/exclude certain schools. Hover over a line or circle to see the name of the school. Brushing
+                    on either or both of the stacked area chart and strip plot filters the data shown on this chart, as
+                    well. </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- SCRIPTS -->
+    <script src="js/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/smoothscroll.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="https://d3js.org/d3.v7.js"></script>
+    <script src="visualizations/stackedline.js"></script>
+    <script src="visualizations/striplot.js"></script>
+    <script src="visualizations/linechart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.js"></script>
+
+</body>
+
+</html>

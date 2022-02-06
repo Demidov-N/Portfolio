@@ -1,0 +1,57 @@
+
+
+.navatar {
+  .brand-logo {
+    position: static;
+  }
+
+  #avatar {
+    height: inherit;
+    padding-right: 10px;
+    > li,
+    a {
+      height: inherit;
+      img {
+        vertical-align: middle;
+        height: 100%;
+        padding: 8px;
+      }
+
+
+    }
+  }
+}
+
+.nav-wrapper form{
+    margin: auto;
+    width: 50%;
+}
+
+.nav-wrapper .input-field{
+    padding-top: 7px;
+}
+
+.nav-wrapper form #search{
+    height: 50px;
+}
+
+nav .right{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+#login-page{
+  width: 500px;
+}
+
+
+.card.small {
+  .card-image {
+    object-fit: cover;
+  }
+}
+
+.circle {
+  object-fit: inherit;
+}

@@ -1,0 +1,119 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MyPipe</title>
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="{% static 'materialize/css/materialize.css'%}"  media="screen,projection"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link type="text/css" rel="stylesheet" href="{% static "materialize/scss/style.css"%}"/>
+    <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+    <script src="https://unpkg.com/video.js/dist/video.js"></script>
+    <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js"></script>
+</head>
+<body>
+
+<div class="navbar-fixed">
+<nav class="navatar blue darken-2">
+  <div class="nav-wrapper">
+      <ul class="left">
+          <li>
+              <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i>
+              </a></li>
+          <li><a href="{% url 'main' %}" class="brand-logo left">MyPipe</a></li>
+      </ul>
+          <form id = "search" action="{% url "search" %}" method="post">
+              {% csrf_token %}
+              <div class="input-field">
+                  <input id="search" type="search" name="search" placeholder="Type the search">
+                  <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                  <i class="material-icons">close</i>
+              </div>
+          </form>
+    <ul id="avatar" class="right">
+        <li><a class="dropdown-trigger" data-target='dropdown1' href="{% url 'account' account.username %}">
+            <span>{{ account.username }}</span>
+            <img class="circle" src="{% static '/user_data/avatar/'%}{{ account.avatar }}"></a>
+        </li>
+     </ul>
+  </div>
+</nav>
+</div>
+<!-- Dropdown Structure -->
+  <ul id='dropdown1' class='dropdown-content'>
+    <li><a href="{% url "my_channels" %}">My Channels</a></li>
+    <li><a href="{% url "history" %}">history</a></li>
+    <li><a href="{% url 'login' %}">Logout</a></li>
+  </ul>
+
+
+  <ul id="slide-out" class="sidenav">
+    <li><div class="user-view">
+      <div class="background blue darken-4">
+      </div>
+        <a href="{% url "account" account.username %}"><img class="circle" src="{% static '/user_data/avatar/'%}{{ account.avatar }}"></a>
+        <a href="{% url "account" account.username %}"><span class="white-text name truncate">{{ account.username }}</span></a>
+    </div></li>
+      <li><a href="{% url "account" account.username %}">Account information</a> </li>
+      <li><a href="{% url "my_channels" %}">Upload a video</a></li>
+      <li><a href="{% url "history" %}">History</a> </li>
+        <li><a href="{% url 'login' %}" class="red-text">Logout</a> </li>
+      <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+          <li>
+            <a class="collapsible-header">My Channels<i class="material-icons">arrow_drop_down</i></a>
+            <div class="collapsible-body">
+              <ul>
+                  {% for channel in acc_channels %}
+                      <li>
+                          <a href="#!">
+                              <img class="circle" height="100%" align="middle"
+                                   src="{% static '/user_data/channel_avatar/'%}{{ channel.avatar }}">
+                              <span> {{ channel.name }}</span>
+                          </a>
+                      </li>
+                  {% endfor %}
+              </ul>
+            </div>
+          </li>
+            <li>
+                <a class="collapsible-header">Subscribed Channels<i class="material-icons">arrow_drop_down</i></a>
+            <div class="collapsible-body">
+              <ul>
+                {% for channel in subscribed %}
+                      <li>
+                          <a href="{% url "channel" channel.name %}">
+                              <img class="circle" height="100%" align="middle"
+                                   src="{% static '/user_data/channel_avatar/'%}{{ channel.avatar }}">
+                              <span> {{ channel.name }}</span>
+                          </a>
+                      </li>
+                  {% endfor %}
+              </ul>
+            </div>
+            </li>
+        </ul>
+      </li>
+  </ul>
+
+
+ {% block content %}
+
+   {% endblock content %}
+
+<!--JavaScript at end of body for optimized loading-->
+<script type="text/javascript" src="{% static "/materialize/js/materialize.js" %}"></script>
+<script type="text/javascript" src="{% static "/materialize/js/project.js" %}"></script>
+<script>
+    var el = document.getElementById('tabs')
+    var instance = M.Tabs.init(el)
+    </script>
+</body>
+</html>

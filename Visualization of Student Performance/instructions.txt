@@ -1,0 +1,19 @@
+Link to the website : https://pages.github.ccs.neu.edu/ashera2/DS4200.BtC.Group4/
+
+Template used: https://templatemo.com/tm-538-digital-trend
+
+How to run on local machine
+
+1. download all the files in the zip file (keep the structure of all folders i.e. the nested level of different files)
+2. open index.html
+3. navigate through the website using the navigation bar on the top
+
+Explanation of files 
+index.html : the main page of the website 
+other .html files : correspond to each section of the website 
+visualizations/linechart.js : render the third line graph in final visualization 
+visualizations/stackedline.js : render the first stacked line chart in final visualization 
+visualizations/striplot.js : render the second striplot in final visualization 
+visualizations/AttendanceCompiled.csv : dataset combined for all years
+
+users should not be editing any other files except those mentioned above!

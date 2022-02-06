@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Final Group Project</title>
+
+    <!-- Importing the stylesheets required by template -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+    <!-- Main CSS from the template -->
+    <link rel="stylesheet" href="css/templatemo-digital-trend.css">
+
+</head>
+<body>
+
+<!-- Navbar of the project -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            Group B4 Final Project
+        </a>
+
+        <!-- Collapse Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Items -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+
+                <!-- Project Information -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        Project Information
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <!-- Motivation page -->
+                        <li><a class="dropdown-item" href="motivation.html">Motivation</a></li>
+                        <!-- Task analysis page -->
+                        <li><a class="dropdown-item" href="task-analysis.html">Task Analysis</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        Data
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <!-- Data Overview page -->
+                        <li><a class="dropdown-item" href="data-overview.html">Data Overview</a></li>
+                        <!-- Data analysis page -->
+                        <li><a class="dropdown-item" href="data-analysis.html">Data Analysis</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <!-- Design process page -->
+                    <a href="designing.html" class="nav-link">Design Process</a>
+                </li>
+                <li class="nav-item">
+                    <!-- Final visualization page -->
+                    <a href="visualisation.html" class="nav-link">Final Visualization</a>
+                </li>
+                <li class="nav-item">
+                    <!-- Conclusion page -->
+                    <a href="conclusion.html" class="nav-link">Conclusion</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <section class="project-detail">
+        <div class="container">
+            <div class="text-center">
+                <h1>Interesting Insights on the Data</h1>
+                <p class="text-center">
+                    Here we are going to present data analysis we made prior to creating visualizations, to understand what
+                    we can do with the data.
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-lg-9 mx-auto col-md-11 col-12 my-5 pt-3" data-aos="fade-up">
+                    <h2 class="mb-3">Recommendation by Schools Over Years
+                    </h2>
+                    <img src="dataReport/images/linechart.png" width="100%">
+
+                    <p>
+                        While looking at the data provided by Bridge To Calculus,
+                        we discovered there are multiple schools enrolled in BtC.
+                        We thought it would be great if there was a measure that could
+                        compare each school. The above graph illustrates the average attendance
+                        per year for each school, and it allows users to select specific schools
+                        they want to see.  There are some schools enrolled for all 5 years, and some
+                        are enrolled for just a year. The graph shows that the schools with students
+                        enrolled in Bridge to Calculus for all 5 years and with the highest average
+                        attendance rate are Boston Community Leadership Academy (orange line) and The
+                        English High School (pink line).
+                    </p>
+
+                    <h2 class="mb-3">Recommendation Distributions Among Schools</h2>
+                    <img src="dataReport/images/barchart.png" width=100%>
+                    <p>
+                        Continuing the comparison between schools, we concluded showing the distribution of
+                        recommendations at each school can illustrate what type of education each school should focus
+                        on. The Y-axis on the graph is the number of recommendations, and the number of recommendations
+                        with the length of the full column equal to the number of students enrolled in BtC. This graph
+                        can be used to analyze students` general math level. For example, the left-most column,
+                        The John D. O`Bryant School of Mathematics, shows that the majority of students were
+                        recommended to take AP Calculus AB. The fourth column from the left, Boston Community
+                        Leadership Academy, shows there is no student who is recommended Pre-Calculus. By analyzing
+                        these statistics, schools and BtC can educate their students more efficiently.
+                    </p>
+
+                    <h2 class="mb-3">Total Recommendation</h2>
+                    <img src="dataReport/images/bubbles.png" width="100%">
+                    <p>
+                        This graph shows the distribution of recommendations, with the size of each recommendation being
+                        proportional to the number of recommendations. This graph is useful when determining what
+                        subjects students mostly need help with. According to the graph, AP Calculus AB carries the
+                        biggest portion of recommendations, followed by Pre-Calculus. With this graph in mind, Bridge To
+                        Calculus should prepare more teachers for AP Calculus AB and Pre-Calculus than Regular Calculus
+                        or AP Calculus BC.
+                    </p>
+
+                    <h2 class="mb-3">School Distribution</h2>
+                    <img src="dataReport/images/tree.png" width="100%">
+                    <p>
+                        If Bridge To Calculus were to expand locally, figuring out the schools where students actively
+                        engage the most would be beneficial. To accomplish that, we made a visualization that shows the
+                        top 10 schools with the highest average attendance rate. We added a condition to schools to have
+                        at least 5 students because there were some schools with only one or two students. The
+                        visualization can be utilized in marketing Bridge To Calculus in the targeted school regions. In
+                        addition, it can be easily reversed, show which schools are particularly vulnerable and target
+                        the schools with low attendance rate with different approaches.
+                    </p>
+
+                    <h2 class="mb-3">Students Enrollment Over Years</h2>
+                    <img src="dataReport/images/lined.png" width="100%">
+                    <p>
+                        The best way to prove the effectiveness of Bridge To Calculus is by comparing the grades of
+                        students` math scores before and after their enrollment in Bridge To Calculus. However, we do
+                        not have that data, so we concluded that the best alternative is to show the number of students
+                        enrolled per year. This graph directly shows the size of the group, and a constant upper-right
+                        trend will indicate the group`s growth rate. The data shows a decline in the number of students
+                        in 2019, followed by slight growth in 2021. (There was no Bridge to Calculus program in 2020 due
+                        to the pandemic)
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>
+
+
+
+<!-- SCRIPTS -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/smoothscroll.js"></script>
+<script src="js/custom.js"></script>
+
+</body>
+</html>

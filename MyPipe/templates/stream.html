@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+    <div class="row" style="padding-top: 30px">
+    <div class="col s9">
+    <div class = "row">
+        {% if stream.running %}
+            {% if stream.type == "youtube" %}
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ stream.location }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                {% else %}
+             <video id="video" style="width: 100%" name="video" controls preload="auto"></video>
+
+<script>
+  var video = document.getElementById('video');
+  var videoSrc = '{{ url }}';
+  if (Hls.isSupported()) {
+    var hls = new Hls();
+    hls.loadSource(videoSrc);
+    hls.attachMedia(video);
+  }
+  else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+    video.src = videoSrc;
+  }
+</script>
+{% endif %}
+    </div>
+            {% if stream.type == "direct" %}
+            <div class="row">
+            <div class="card-panel z-depth-1">
+                <div class="card-content">
+                    <span class="card-title">Set Up Stream</span>
+                    <p>The live stream link: <textarea class="materialize-textarea">rtmp://global-live.mux.com:5222/app/<STREAM_KEY></textarea></p>
+                    <p>Stream key: <textarea class="materialize-textarea">{{ key }}</textarea> </p>
+            </div>
+            </div>
+            </div>
+            {% endif  %}
+    {% else %}
+            <div class="row">
+            <h4 class="blue-text">Stream is not running. Open it to start</h4>
+            </div>
+    {% endif %}
+    <div class="row">
+        <div class="col s9 ">
+            <h4> {{ stream.name }}</h4>
+            <span>Max Viewers: {{ stream.views }} &nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span>Uploaded: {{ stream.date_held }}</span>
+        </div>
+        <div class="col s3">
+            {% if stream.owner == account.username %}
+                <div class="row">
+                <a class="btn blue" href="{% url "edit_stream" stream.id %}" style="width: 80%">Edit Stream</a>
+                </div>
+                <div class="row">
+                {% if stream.running %}
+                    <a class="btn blue" href="{% url "start_stream" stream.id %}" style="width: 80%">End Stream</a>
+                    {% else %}
+                <a class="btn blue" href="{% url "start_stream" stream.id %}" style="width: 80%">Start Stream</a>
+                    {% endif %}
+                </div>
+                <div class="row">
+                <a class="btn red" href="{% url "delete_stream" stream.id stream.channel %}" style="width: 80%">Delete Stream</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="card-panel z-depth-1">
+    <div class="card-panel z-depth-1">
+        <div class="row">
+        <div class="col s1">
+            <a href="{% url "channel" stream.channel %}">
+                <img class="responsive-img circle" style="vertical-align: middle; width: 70px"
+             src="{% static "user_data/channel_avatar/" %}{{ stream.avatar }}">
+            </a>
+        </div>
+        <div class="col s11">
+            <a href="{% url "channel" stream.channel %}">
+            <h5>{{ stream.channel }}</h5>
+            </a>
+        </div>
+        </div>
+        <div class="row">
+
+            <div class="col" style="padding-left: 10px">
+                <h6><b>Description:</b></h6>
+                <p style="padding-left: 10px">{{ stream.description }}</p></div>
+        </div>
+    </div></div>
+    <div class="col s12" style="padding-left: 30px">
+    <div class="collection">
+        {% for comment in comments %}
+            <li class="collection-item avatar">
+            <img class="circle" src="{% static "user_data/avatar/" %}{{ comment.avatar }}">
+            <span class="title"><b>{{ comment.username }}</b></span>
+            <p>{{ comment.text }}</p>
+                <ul class="collection-item avatar" style="padding-left: 10px;">
+                    {% for reply in replies %}
+                        {% if reply.id_replied == comment.id %}
+                            <li class="collection-item avatar">
+                            <img class="circle" src="{% static "user_data/avatar/" %}{{ reply.avatar }}">
+                            <span class="title"><b>{{ reply.username }}</b></span>
+                            <p>{{ reply.text }}</p>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                <li>
+                    <form method="get" action="{% url "comment_save" account.username stream.id comment.id %}">
+                        <textarea class="materialize-textarea" placeholder="Reply to Comment" id="comment" name="comment"></textarea>
+                        <button class="btn blue" type="submit">Reply</button>
+                    </form>
+                </li>
+                </ul>
+            </li>
+        {% endfor %}
+    </div>
+    <li>
+        <span>Leave a Comment</span>
+        <form method="get" action="{% url "comment_save" account.username stream.id 0  %}">
+            <textarea class="materialize-textarea" placeholder="Leave Comment" id="comment" name="comment"></textarea>
+            <button class="btn blue" type="submit">Submit</button>
+        </form>
+    </li>
+    </div>
+    </div>
+    <div class="col s3" style="padding-left: 10px">
+        <h5 class="black-text">More {{ video.channel }}</h5>
+        {% for video in more %}
+                    <div class="col s12 left-align">
+                    <a href="{% url "video" video.id %}">
+                        <div class="card small">
+                        <div class="card-image">
+                            <img src="{{ video.thumbnail }}">
+                            <p>{{ video.thumbnail }}</p>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title black-text truncate">{{ video.name }}</span>
+                            <p class="black-text">Views: {{ video.views }}</p>
+                            <a href="{% url "channel" video.channel %}">{{ video.channel }}</a>
+                        </div>
+                        </div>
+                        </a>
+                    </div>
+            {% endfor %}
+    </div>
+    </div>
+    </div>
+{% endblock %}

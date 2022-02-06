@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Final Group Project</title>
+
+    <!-- Importing the stylesheets required by template -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+    <!-- Main CSS from the template -->
+    <link rel="stylesheet" href="css/templatemo-digital-trend.css">
+
+</head>
+<body>
+
+<!-- Navbar of the project -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            Group B4 Final Project
+        </a>
+
+        <!-- Collapse Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Items -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+
+                <!-- Project Information -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        Project Information
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <!-- Motivation page -->
+                        <li><a class="dropdown-item" href="motivation.html">Motivation</a></li>
+                        <!-- Task analysis page -->
+                        <li><a class="dropdown-item" href="task-analysis.html">Task Analysis</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        Data
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <!-- Data Overview page -->
+                        <li><a class="dropdown-item" href="data-overview.html">Data Overview</a></li>
+                        <!-- Data analysis page -->
+                        <li><a class="dropdown-item" href="data-analysis.html">Data Analysis</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <!-- Design process page -->
+                    <a href="designing.html" class="nav-link">Design Process</a>
+                </li>
+                <li class="nav-item">
+                    <!-- Final visualization page -->
+                    <a href="visualisation.html" class="nav-link">Final Visualization</a>
+                </li>
+                <li class="nav-item">
+                    <!-- Conclusion page -->
+                    <a href="conclusion.html" class="nav-link">Conclusion</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <section class="project-detail">
+    <div class="col-lg-9 mx-auto col-md-11 col-12 my-5 pt-3" data-aos="fade-up">
+        <h1 class="mb-4 text-center">Data Overview</h1>
+        <p>The project was done in groups, and it consisted of having to analyze a set of data of a school assigned to each group.  
+            We chose data regarding the students' attendance to class and their grades due to the fact that these were the records that could be accessed more easily. 
+            Therefore, we compiled three distinguished columns of data: the attendance records, the recommendations for Calculus, and the names of schools. 
+            Based on this information, it was necessary to analyze the data in order to determine whether there was a correlation 
+            between attendance to school and recommendation, and, having determined this, 
+            give advice to the students in this school on how to improve their academic performance.
+        </p>
+        <h5>Data Used</h5>
+        <p>In our final dataset, we have the following columns:
+        </p>
+        <ul>
+            <li><span>First and last name of the students, to distinguish each row in the dataset.</span></li>
+            <li><span>Recommendation, we need it to achieve one of our main goals of the project. We have defined 6 different recommendations to standardize the column and better categorize students: AP Calculus AB, AP Calculus BC, IB Math SL, Pre-Calculus, Regular Calculus, No Recommendation <br></span></li>
+            <li><span>Attendance. We decided to have it in percentage as the majority of raw data is presented in this format<br></span></li>
+            <li><span>School. We have this column so we can group students on their schools and location. We standardized all the school names for better grouping and categorizing.<br></span></li>
+            <li><span>Year. We have this column to highlight the development of the program throughout the year.</span></li>
+        </ul>
+        <h5>Data Union</h5>
+        <p>We united all the data based on the year the students were attending the class. We believe that having data for several years is important
+            as we can compare an overall performance of the program overtime, and also we are going to have more data on students to make a better analysis
+            of correlation of performance and the attendance.
+        </p>
+        <h5>Data Inconsistency</h5>
+        <p>In spite of these two records being the ones that could be acquired more easily in comparison to other information, 
+            this does not mean that there were not any issues with the data. One of the most notable problems was the fact that some of the attendance for 2019 was recorded in counts,
+            while the other was recorded as a percentage. In other words, in 2019, student A attended X amount of times to the tutoring session,
+            but in 2016 student A attended X% of all the sessions. Additionally, each teacher made recommendations using different terms, 
+            for example AP Calculus BC and Calculus BC represents the same recommendation, so we needed to standardize the recommendations. 
+            Taking this into account, I would recommend my partners (and anyone else who has to analyze data in this way) to be consistent with the measuring
+            methods implemented in order for the clean-up and analysis processes to be carried out more easily. Therefore, either record all the data as counts
+            or record all the data as percentages, but do not mix up two different types of measurements, for it will only complicate the analysis more.
+        </p>
+    </div>
+    </section>
+</div>
+
+
+
+<!-- SCRIPTS -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/smoothscroll.js"></script>
+<script src="js/custom.js"></script>
+
+</body>
+</html>
