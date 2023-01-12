@@ -1,0 +1,61 @@
+load Koala.ppm koala
+
+brighten 10 koala koala-brighter
+save examples/koala-brighter.png koala-brighter
+
+brighten -110 koala koala-darker
+save examples/koala-darker.png  koala-darker
+
+vertical-flip koala koala-vertical
+save examples/koala-vertical.png koala-vertical
+
+horizontal-flip koala koala-horizontal
+save examples/koala-horizontal.png  koala-horizontal
+
+red-component koala koala-red-component
+save  examples/koala-red-component.png koala-red-component
+
+blue-component koala koala-blue-component
+save  examples/koala-blue-component.png koala-blue-component
+
+green-component koala koala-green-component
+save  examples/koala-green-component.png koala-green-component
+
+value-component koala koala-value-component
+save examples/koala-value-component.png  koala-value-component
+
+luma-component koala koala-luma-component
+save  examples/koala-luma-component.png koala-luma-component
+
+intensity-component koala koala-intensity-component
+save examples/koala-intensity-component.png koala-intensity-component
+
+load peacock.png peacock
+
+save newExamples/peacock.jpg peacock
+
+blur peacock peacock-blur
+
+save newExamples/peacockBlur.jpg peacock-blur
+
+blur peacock-blur peacock-blur1
+
+blur peacock-blur1 peacock-blur2
+
+blur peacock-blur2 peacock-blur3
+
+save newExamples/peacockBlurrier.jpg peacock-blur3
+
+sharpen peacock peacock-sharpen
+
+sharpen peacock-sharpen peacock-sharpen1
+
+save newExamples/peacock-sharpen.jpg peacock-sharpen1
+
+sepia peacock peacock-sep
+save newExamples/peacock-sep.jpg peacock-sep
+
+greyscale peacock peacock-grey
+save newExamples/peacock-grey.jpg peacock-grey
+
+

@@ -1,0 +1,61 @@
+Hello, this is an ImageProcessor Application developed by Omar and Nikita
+
+------ Overview ---------
+
+You will find an ImageEditor class which contains the main method. 
+Running the program without specifing any CLI Input, then the program will 
+open a GUI which has a specified help button to explain the directions.
+
+You can run it with the commands -text which will give you text controller that you can
+interact with live. 
+You can use the argument -file followed with the path of a script to run the
+program using a script.
+Same functionality is available across the three controllers.
+
+Below are the valid commands for the text program. [your input]
+
+#load
+load [image path] [name to save image]
+
+#save
+save [image path.imgExt] [image name you want to save]
+
+#(transformation)
+(transformation) [image name to transform] [name of image after transformation]
+
+Below is a list of all the currently possible transformations (used in the same format as above) 
+red-component {get's only the red component of all pixes}
+green-component {get's only the green component of all pixes}
+blue-component {get's only the blue component of all pixes}
+value-component {visualize the value of an Image}
+luma-component {visualize the luma of an Image}
+intensity-component {visualize the intensity of an Image}
+horizontal-flip {flip the image horizontally}
+vertical-flip {flip the image vertically}
+brighten [positive value to brighten and negative value to darken] {changes the brightness of the Image}
+greyscale - does a gray scale transformation}
+sepia {applies a sepia filter}
+blur {blurs the image}
+sharpen {sharpens the image}
+
+
+
+
+Below is how to use the GUI program
+
+It is capable of loading an image, operating numerous transformations on it, and saving the image
+after being transformed.
+
+To load an image, click on the load button above and pick an image to load into the program
+(.jpg, .ppm, and .png are supported). Once the image is loaded, it will show up on the left in
+the drag down menu. You may load multiple images at once.
+
+Chose the image you would like to transform, give it a new name in the "Transformation Name" text
+field, then pick the type of transformation you would like to do from the transformations
+drop down, by default the initial name is the name of the file without extension from where
+the image was initially loaded to. If there are extra parameters, you must fill them, then press go
+and the transformation will be applied. If to save it under existing name,
+it will override that one.
+
+If you would like to save the image, click the save button above, type a name for the image,
+pick a destination and then click save.
