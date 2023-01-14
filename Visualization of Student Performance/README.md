@@ -9,7 +9,7 @@ Copied from Northeastern University GitHub Private Repository (https://github.cc
 Created with the collaboration with Corey Dokster (https://github.ccs.neu.edu/coreydockser) and Minho Seo (https://github.com/ashera2, https://github.ccs.neu.edu/ashera2), 
 
 
-Link to the visualization website (hosted via GitHub Pages): 
+Link to the visualization website (hosted via GitHub Pages): https://demidov-n.github.io/visualization/
 
 ## Website Contents: 
 - Landing Page: Introduction
